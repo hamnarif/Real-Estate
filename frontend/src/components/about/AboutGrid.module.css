@@ -1,0 +1,44 @@
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.gridItem {
+  padding: 1rem 0;
+}
+
+.gridItem h3 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--brandy-rose);
+}
+
+.gridItem p {
+  font-size: clamp(1.3rem, 2.5vw, 1.5rem);
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+.alignRight {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: right;
+}
+
+/* First item spans first row */
+.gridItem:first-child {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Third item spans third row */
+.gridItem:last-child {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+

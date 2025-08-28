@@ -1,0 +1,76 @@
+.header {
+  min-height: 100vh;
+  padding: 6rem 1rem 4rem;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+    url('/images/hero.png') center / cover no-repeat;
+  color: #ededed;
+}
+
+.heroInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.25rem;
+  min-height: calc(100vh - 10rem);
+  align-content: end;
+}
+
+.title {
+  font-size: clamp(3rem, 5vw + 1rem, 5rem);
+  line-height: 1.02;
+  max-width: 19ch;
+}
+
+.tabbar {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.tab,
+.tabActive {
+  background: transparent;
+  color: #d4d4d4;
+  border: none;
+  padding: 0.35rem 0.5rem;
+  cursor: pointer;
+}
+
+.tabActive {
+  color: #ffffff;
+  border-bottom: 3px solid var(--brand);
+}
+
+.search {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 0.5rem;
+  border-radius: 999px;
+}
+
+.search input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  outline: none;
+}
+
+.iconButton {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #3a3a3a;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.iconButton:hover {
+  background: #222;
+}

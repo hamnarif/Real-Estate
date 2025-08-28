@@ -1,0 +1,193 @@
+/maison-celest
+  /frontend                         # Next.js (UI/UX)
+    /app
+      /about/
+      /buy/
+      /sell/
+      /buy-sell/
+      /listings/
+      /rent/
+      /tools/
+      /search/
+      /blog/
+      /contact/
+    /components
+      /layout
+        Navbar/
+          Navbar.tsx
+          Navbar.module.css
+          index.ts
+        Footer/
+          Footer.tsx
+          Footer.module.css
+          index.ts
+        Header/
+          Header.tsx
+          Header.module.css
+          index.ts
+      /ui
+        Button/
+          Button.tsx
+          Button.module.css
+          index.ts
+        Input/
+          Input.tsx
+          Input.module.css
+          index.ts
+        Modal/
+          Modal.tsx
+          Modal.module.css
+          index.ts
+        Accordion/
+          Accordion.tsx
+          Accordion.module.css
+          index.ts
+        Tabs/
+          Tabs.tsx
+          Tabs.module.css
+          index.ts
+        StatsCard/
+          StatsCard.tsx
+          StatsCard.module.css
+          index.ts
+      /forms
+        LeadForm/
+          LeadForm.tsx
+          LeadForm.module.css
+          index.ts
+        HomeEvaluationForm/
+          HomeEvaluationForm.tsx
+          HomeEvaluationForm.module.css
+          index.ts
+        AlertSignup/
+          AlertSignup.tsx
+          AlertSignup.module.css
+          index.ts
+        ContactForm/
+          ContactForm.tsx
+          ContactForm.module.css
+          index.ts
+        ScheduleTourForm/                 # NEW
+          ScheduleTourForm.tsx
+          ScheduleTourForm.module.css
+          index.ts
+      /listings
+        PropertyCard/
+          PropertyCard.tsx
+          PropertyCard.module.css
+          index.ts
+        PropertyGrid/
+          PropertyGrid.tsx
+          PropertyGrid.module.css
+          index.ts
+        PropertyFilters/
+          PropertyFilters.tsx
+          PropertyFilters.module.css
+          index.ts
+        MapView/
+          MapView.tsx
+          MapView.module.css
+          index.ts
+        SaveSearchButton/                 # NEW
+          SaveSearchButton.tsx
+          SaveSearchButton.module.css
+          index.ts
+      /alerts
+        PriceDropAlert/
+          PriceDropAlert.tsx
+          PriceDropAlert.module.css
+          index.ts
+        DailyEmailAlert/
+          DailyEmailAlert.tsx
+          DailyEmailAlert.module.css
+          index.ts
+        NeighbourhoodBuzzer/
+          NeighbourhoodBuzzer.tsx
+          NeighbourhoodBuzzer.module.css
+          index.ts
+    /hooks
+      useAuth.ts
+      useMLS.ts
+      useLeads.ts
+      useAlerts.ts                        # NEW
+    /context
+      AuthContext.tsx
+      UIContext.tsx
+    /lib
+      mls.ts
+      n8n.ts
+      crm.ts
+    /services
+      authService.ts
+      listingService.ts
+      stagingService.ts
+      alertService.ts                     # NEW
+      leadService.ts                      # NEW (optional if you split leads)
+    /public
+      /images/
+      /icons/
+    /styles
+      globals.css
+      variables.css
+      mixins.css
+      tailwind.config.js
+
+  /backend                              # WordPress (headless CMS; no Woo)
+    /plugins/
+      /custom/                          # MLS connector, API extensions
+      /third-party/                     # SEO, caching, forms (no Woo)
+    /mu-plugins/
+    /themes/
+      headless-theme/
+    /cpt/                               # testimonials, staging projects, neighborhoods, market-reports
+    /data/                              # sample content
+
+  /automation                           # n8n workflows
+    /leads/
+      lead-capture.json
+      seller-tools.json
+    /alerts/
+      buyer-alerts.json
+      neighbourhood.json
+    /social/
+      social-posting.json
+    /analytics/
+      analytics.json
+    README.md
+
+  /integrations
+    /mls/                               # RESO API / mock
+    /crm/                               # Airtable, HubSpot setup
+    /calendar/                          # Google/Outlook sync
+    /comms/                             # SendGrid, WhatsApp
+    /tests/                             # Mock APIs, integration tests
+
+  /deploy
+    docker-compose.yml
+    Dockerfile.frontend
+    Dockerfile.backend
+    Dockerfile.automation
+    vercel.json
+    env.example
+    nginx.conf
+    /terraform/
+
+  /docs
+    architecture.md
+    setup-guide.md
+    workflows.md
+    client-handbook.md
+    /architecture-diagrams/
+
+
+🏡 Lead & Tour Flow
+
+User action → Fills ScheduleTourForm or LeadForm on frontend.
+
+Next.js service → Calls leadService.ts / alertService.ts → hits /automation/leads/lead-capture.json.
+
+n8n workflow → Validates + enriches → pushes to CRM (HubSpot/Airtable).
+
+Optional → Syncs to calendar (Google/Outlook) for tour booking.
+
+Comms → Sends confirmation via SendGrid/WhatsApp to user + notification to Realtor.

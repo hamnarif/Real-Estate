@@ -1,0 +1,62 @@
+.propertyCard {
+  background: transparent;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.propertyCard:hover {
+  transform: scale(1.02);
+}
+
+/* Base image styling */
+.propertyCard img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0 !important;
+  margin-bottom: 1rem;
+}
+
+.propertyInfo h3 { 
+  font-size: 1.25rem; 
+  font-weight: 600;
+  letter-spacing: -0.01em; 
+  margin: 0 0 0.5rem 0; 
+  color: #ffffff;
+}
+
+.address {
+  color: var(--gray-chateau);
+  font-size: 0.95rem;
+  margin: 0 0 1rem 0;
+}
+
+.propertyDetails {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--mountain-mist);
+  font-size: 0.9rem;
+}
+
+.detail svg {
+  color: var(--brandy-rose);
+  flex-shrink: 0;
+}
+
+.price {
+  color: var(--brandy-rose);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+

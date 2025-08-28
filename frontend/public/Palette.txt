@@ -1,0 +1,35 @@
+/* CSS HEX */
+--brandy-rose: #b7917e;
+--zeus: #221a16;
+--sand-dune: #836b61;
+--mountain-mist: #908c95;
+--kabul: #5e463c;
+--pale-sky: #666e7e;
+--tundora: #4b4445;
+--gray-chateau: #9a9ea1;
+--scorpion: #64595d;
+--hawaiian-tan: #a44c18;
+
+/* SCSS HEX */
+$brandy-rose: #b7917e;
+$zeus: #221a16;
+$sand-dune: #836b61;
+$mountain-mist: #908c95;
+$kabul: #5e463c;
+$pale-sky: #666e7e;
+$tundora: #4b4445;
+$gray-chateau: #9a9ea1;
+$scorpion: #64595d;
+$hawaiian-tan: #a44c18;
+
+/* SCSS RGB */
+$brandy-rose: rgba(183,145,126,1);
+$zeus: rgba(34,26,22,1);
+$sand-dune: rgba(131,107,97,1);
+$mountain-mist: rgba(144,140,149,1);
+$kabul: rgba(94,70,60,1);
+$pale-sky: rgba(102,110,126,1);
+$tundora: rgba(75,68,69,1);
+$gray-chateau: rgba(154,158,161,1);
+$scorpion: rgba(100,89,93,1);
+$hawaiian-tan: rgba(164,76,24,1);
